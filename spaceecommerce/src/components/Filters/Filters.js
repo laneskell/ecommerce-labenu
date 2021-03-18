@@ -1,0 +1,69 @@
+import React from 'react'
+import styled from 'styled-components';
+
+const FiltersContainer = styled.div`
+  border: 1px solid black;
+  padding: 8px;
+  background-color:#313030;
+  color:white;
+`;
+
+const InputContainer = styled.label`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 8px;
+`;
+const InputSearch = styled.input`
+  width:30%;
+`;
+const SearchByCategory = styled.p`
+  background-color:grey;
+  padding: 10px;
+  margin-top:7px;
+  font-size:0.9rem;
+  text-transform:uppercase;
+ 
+
+  
+`;
+
+export class Filters extends React.Component {
+  render() {
+    return <FiltersContainer>
+      <h3>Buscar Produtos</h3>
+        <InputContainer>
+          Valor mínimo:
+          <InputSearch
+            type="number"
+            value={this.props.minFilter}
+            onChange={this.props.onChangeMinFilter}
+          />
+        </InputContainer>
+        <InputContainer>
+          Valor máximo:
+          <InputSearch
+            type="number"
+            value={this.props.maxFilter}
+            onChange={this.props.onChangeMaxFilter}
+          />
+        </InputContainer>
+        <InputContainer>
+          Busca por nome:
+          <input
+            type="text"
+            value={this.props.nameFilter}
+            onChange={this.props.onChangeNameFilter}
+          /> 
+        </InputContainer>
+        <br/>
+        <h3>Buscar Por Categoria</h3>
+        
+          <SearchByCategory href="#" >Brinquedos Temáticos</SearchByCategory>
+          <SearchByCategory href="#" >Pedras Espaciais</SearchByCategory>
+          <SearchByCategory href="#" >Relíquias Espaciais</SearchByCategory>
+          <SearchByCategory href="#" >Roupas e Acessórios</SearchByCategory>
+
+    </FiltersContainer>
+  }
+}
