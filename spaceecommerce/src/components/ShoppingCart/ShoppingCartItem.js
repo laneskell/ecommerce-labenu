@@ -6,7 +6,7 @@ const ItemContainer = styled.div`
   grid-auto-flow: column;
   gap: 4px;
   align-items: center;
-
+ 
   p {
     margin: 0;
   }

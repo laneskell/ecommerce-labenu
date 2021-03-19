@@ -6,115 +6,153 @@ import styled from 'styled-components';
 
 const AppContainer = styled.div`
   display: grid;
-  grid-template-rows:3fr, 20fr;
+  grid-template-rows: 2fr 20fr 0.1fr;
   grid-template-columns: 1fr 3fr 1fr;
-  padding: 16px;
-  gap: 8px;
-  background-image: linear-gradient(200deg, #c9d0d1, white);
+  background-image: linear-gradient(200deg, #8f8f8f, white);
+  height:100vh;
+`;
+const Header = styled.div`
+display:grid;
+font-size:40px;
+align-items:center;
+justify-content:center;
+height:100%;
+color:white;
+background-color:black;
+grid-column:1 /-1;
+`;
+const Footer = styled.div`
+display:grid;
+grid-column:1 /-1;
+background-color:black;
+color:white;
+justify-content:center;
+`;
 
+
+
+const ContainerProducts = styled.div`
+  overflow:auto;
 `;
 const HeaderContainer = styled.div`
-background-color: #313131;
+  background-color: #313131;
 
 
 `;
-
-// const MainProducts = styled.div`
-//   display: grid;
-//   grid-template-rows:1fr, 6fr,1fr;
-//   width: 100vw;
-//   background-color:#313131;
-//   /* background-image: url(https://static.videezy.com/system/resources/thumbnails/000/000/116/original/Stars.jpg) ; */
-//   background-size: cover;
-// `;
-// const HeaderStore = styled.div`
-
-// font-size:1.8em;
-// color: white;
-// background-color:black;
-// `;
-// const InputSearch = styled.input`
-// display:flex;
-// flex-direction:column;
-// height:2vh;
-// width:5vw;
-// `;
-
 
 const products = [
   {
     id:1,
-    name: "Camiseta Nasa",
-    photo: "https://img.elo7.com.br/product/zoom/2255380/camiseta-camisa-nasa-exploracao-espacial-liga.jpg",
-    price: 50,
+    name: "Vinho Chileno Branco",
+    description: "Vinho Chileno Branco Sauvignon Blanc Três Medallas SANTA RITA Garrafa 750ml - ",
+    photo: "https://static.paodeacucar.com/img/uploads/1/720/11935720.png",
+    price: 47,
   },
   {
     id:2,
-    name: "Base Espacial ",
-    photo: "https://www.pontofrio-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=750121886",
-    price: 569,
+    name: "Vinho Argentino Brancol ",
+    description:"Vinho Argentino Branco FUZION Chardonnay Garrafa 750ml - Algumas notas de mel e frutas cítricas." , 
+    photo: "https://static.paodeacucar.com/img/uploads/1/247/4103247.jpg",
+    price: 79,
   },
   {
     id:3,
-    name: "Medalha Apollo 11",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZbp0wtO01uw7oAEygtEG3_tRu3q5jS73X1A&usqp=CAU",
-    price: 250,
+    name: "Vinho Chileno Tinto",
+    description:"Vinho Chileno Tinto 120 SANTA RITA Dark Cellar Garrafa 750ml ",
+    photo: "https://static.paodeacucar.com/img/uploads/1/605/619605.png",
+    price: 89,
   },
   {
     id:4,
-    name: "Produto 4",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZbp0wtO01uw7oAEygtEG3_tRu3q5jS73X1A&usqp=CAU",
-    price: 30,
+    name: "Vinho Barton Guestier",
+    description:"Vinho Barton Guestier Chateau Magnol Haut-Medoc AOC 750ml - Notas de cereja preta, traços de café, noz-moscada e especiarias",
+    photo: "https://static.paodeacucar.com/img/uploads/1/648/11697648.jpeg",
+    price: 449,
   },
   {
     id:5,
-    name: "Produto 5",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZbp0wtO01uw7oAEygtEG3_tRu3q5jS73X1A&usqp=CAU",
-    price: 80,
+    name: "Champagne G.H Mumm",
+    description:"Champagne G.H Mumm Olympe Gold Demi Sec 750ml - Desenvolvido especialmente para beber com gelo. Seu blend é composto por Pinot Meunier (60%), Pinot Noir (30%) e Chardonnay (10%",
+    photo: "https://static.paodeacucar.com/img/uploads/1/448/11436448.png",
+    price: 529,
   },
   {
     id:6,
-    name: "Produto 6",
-    photo: "https://www.pontofrio-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=750121886",
-    price: 500,
+    name: "Espumante Nacional Nature",
+    description:"Espumante Nacional Nature CASA PERINI 750ML ",
+    photo: "https://static.paodeacucar.com/img/uploads/1/417/620417.jpg",
+    price: 149,
   },
   {
     id:7,
-    name: "Produto 7",
-    photo: "https://picsum.photos/200/200?random=7",
-    price: 50,
+    name: "Sidra Cereser Ice",
+    description:"Sidra Cereser Ice Garrafa 660ml",
+    photo: "https://static.paodeacucar.com/img/uploads/1/832/649832.png",
+    price: 10,
   },
   {
     id:8,
-    name: "Produto 8",
-    photo: "https://picsum.photos/200/200?random=8",
-    price: 150,
+    name: "Sidra Cereser Especial",
+    description:"Sidra Cereser Edição Especial 660ml",
+    photo: "https://static.paodeacucar.com/img/uploads/1/764/643764.jpg",
+    price: 14,
   },
   {
     id:9,
-    name: "Produto 9",
-    photo: "https://picsum.photos/200/200?random=9",
+    name: "Espumante Casa Perini",
+    description:"Espumante Casa Perini ICE Rosé 750ml",
+    photo: "https://static.paodeacucar.com/img/uploads/1/825/649825.png",
     price: 250,
   },
   {
     id:10,
-    name: "Produto 10",
-    photo: "https://picsum.photos/200/200?random=10",
+    name: "Combo Vodka Nordka",
+    description:"Combo Vodka Nordka 1L + Energético TNT Sabores 269ml",
+    photo: "https://static.paodeacucar.com/img/uploads/1/394/9675394.jpeg",
     price: 30,
   },
   {
     id:11,
-    name: "Produto 11",
-    photo: "https://picsum.photos/200/200?random=11",
-    price: 500,
+    name: "Vodka Belvedere",
+    description:"Vodka Belvedere Black Raspberry 700ml   É produzida apenas com raspberry - um tipo de framboesa - mais frescas e saborosas, colhidas a mão na região de Podlasie, no norte da Polônia.",
+    photo: "https://static.paodeacucar.com/img/uploads/1/197/11650197.png",
+    price: 450,
   },
   {
     id:12,
-    name: "Produto 12",
-    photo: "https://picsum.photos/200/200?random=12",
-    price: 500,
+    name: "Vodka Nacional Tiiv",
+    description:"Vodka Nacional Tiiv 1 Litro - Produto Orgânico",
+    photo: "https://static.paodeacucar.com/img/uploads/1/333/11524333.png",
+    price: 82,
   },
-
+  {
+    id:13,
+    name: "Gin Tanqueray",
+    description:"Gin London Dry Tanqueray Garrafa 750ml",
+    photo: "https://static.paodeacucar.com/img/uploads/1/723/11962723.jpeg",
+    price: 97,
+  },
+  {
+    id:14,
+    name: "Gin Torquay",
+    description:"Gin London Dry Torquay Garrafa 740ml",
+    photo: "https://static.paodeacucar.com/img/uploads/1/874/11630874.png",
+    price: 66,
+  },
+  {
+    id:15,
+    name: "Gin Bombay Sapphire",
+    description:"O Gin Bombay Sapphire é verdadeiramente único!   Enquanto gins comuns fervem seus vegetais diretamente no tanque de destilação, para alcançar seu sabor, o Bombay Sapphire é criado através do processo de vapor de infusão. ",
+    photo: "https://static.paodeacucar.com/img/uploads/1/697/9773697.png",
+    price: 139,
+  },
+  {
+    id:16,
+    name: "Gin The Botanist",
+    description:"VO Gin The Botanist Scotch Dry é único no mundo, pois combina 31 ervas para sua criação, 22 delas exclusivas para sua composição, colhidas à mão, revelando a grande diversidade botânica da ilha de Islay. E o único gin feito na ilha, realmente uma relíquia!",
+    photo: "https://static.paodeacucar.com/img/uploads/1/97/11696097.jpeg",
+    price: 582,
+  },
 
 ];
 
@@ -180,10 +218,10 @@ class App extends React.Component {
   }
 
   render() {
-    
-    return (
+          return (
+      
       <AppContainer>
-        
+        <Header> DRINK STORE</Header>
         <Filters
           minFilter={this.state.minFilter}
           maxFilter={this.state.maxFilter}
@@ -192,6 +230,7 @@ class App extends React.Component {
           onChangeMaxFilter={this.onChangeMaxFilter}            
           onChangeNameFilter={this.onChangeNameFilter}                  
         />
+        <ContainerProducts>
         <Products 
           products={products}
           minFilter={this.state.minFilter}
@@ -199,10 +238,14 @@ class App extends React.Component {
           nameFilter={this.state.nameFilter}
           onAddProductToCart={this.onAddProductToCart}
         />
+        </ContainerProducts>
         <ShoppingCart
           productsInCart={this.state.productsInCart}
           onRemoveProductFromCart={this.onRemoveProductFromCart}
         />
+        <Footer>
+          Proibida a venda de bebidas alcóolicas para menores de 18  
+        </Footer>
       </AppContainer>
     );
   }

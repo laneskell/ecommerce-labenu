@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const FiltersContainer = styled.div`
   border: 1px solid black;
   padding: 8px;
-  background-color:#313030;
+  background-color:#111211;
   color:white;
+ 
 `;
 
 const InputContainer = styled.label`
@@ -17,9 +18,10 @@ const InputContainer = styled.label`
 const InputSearch = styled.input`
   width:30%;
 `;
-const SearchByCategory = styled.p`
+const SearchByCategory = styled.select`
   background-color:grey;
   padding: 10px;
+  width:80%;
   margin-top:7px;
   font-size:0.9rem;
   text-transform:uppercase;
@@ -58,11 +60,15 @@ export class Filters extends React.Component {
         </InputContainer>
         <br/>
         <h3>Buscar Por Categoria</h3>
-        
-          <SearchByCategory href="#" >Brinquedos Temáticos</SearchByCategory>
-          <SearchByCategory href="#" >Pedras Espaciais</SearchByCategory>
-          <SearchByCategory href="#" >Relíquias Espaciais</SearchByCategory>
-          <SearchByCategory href="#" >Roupas e Acessórios</SearchByCategory>
+        <SearchByCategory name="categoria" id="categoria" value={this.props.nameFilter}
+            onChange={this.props.onChangeNameFilter}>
+          <option value="">TODAS</option>
+          <option value="Espumante">ESPUMANTES</option>
+          <option value="Gin">GIN</option>
+          <option value="Vinho">VINHOS</option>
+          <option value="Vodka">VODKAS</option>
+        </SearchByCategory>
+         
 
     </FiltersContainer>
   }
